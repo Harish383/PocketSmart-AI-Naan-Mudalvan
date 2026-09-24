@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}
+Party Planner — PocketSmart AI
+{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        PARTY BUDGET PLANNER
+    </p>
+
+    <h1>
+        Make the celebration fit the budget.
+    </h1>
+
+    <p>
+        Set guests and event details;
+        PocketSmart allocates the spend.
+    </p>
+
+</section>
+
+
+<section class="planner-grid">
+
+    <form
+        id="party-form"
+        class="panel form"
+    >
+
+        <label>
+
+            Total budget (₹)
+
+            <input
+                name="budget"
+                type="number"
+                min="1"
+                required
+                value="75000"
+            >
+
+        </label>
+
+
+        <label>
+
+            Guests
+
+            <input
+                name="guests"
+                type="number"
+                min="1"
+                required
+                value="40"
+            >
+
+        </label>
+
+
+        <label>
+
+            Event type
+
+            <input
+                name="event_type"
+                required
+                value="birthday"
+            >
+
+        </label>
+
+
+        <label>
+
+            Venue / city
+
+            <input
+                name="venue"
+                value="Chennai"
+            >
+
+        </label>
+
+
+        <label>
+
+            Preferences
+
+            <textarea
+                name="preferences"
+                placeholder="Vegetarian, indoor, simple decor..."
+            ></textarea>
+
+        </label>
+
+
+        <button
+            class="button"
+            type="submit"
+        >
+            Generate party plan
+        </button>
+
+
+        <p
+            id="form-error"
+            class="error"
+        ></p>
+
+    </form>
+
+
+    <div
+        id="results"
+        class="panel result"
+    >
+
+        <p class="muted">
+            Your recommendations
+            will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
