@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard — PocketSmart AI
+{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        DASHBOARD
+    </p>
+
+    <h1>
+        Hello, {{ user.name }}.
+    </h1>
+
+    <p>
+        Choose a planner or revisit
+        a recent recommendation.
+    </p>
+
+</section>
+
+
+<div class="cards">
+
+    <a
+        class="card"
+        href="/planner/home"
+    >
+
+        <h3>
+            ⌂ Home
+        </h3>
+
+        <p>
+            Interior planning
+        </p>
+
+    </a>
+
+
+    <a
+        class="card"
+        href="/planner/party"
+    >
+
+        <h3>
+            ✦ Party
+        </h3>
+
+        <p>
+            Event budget
+        </p>
+
+    </a>
+
+
+    <a
+        class="card"
+        href="/planner/jewelry"
+    >
+
+        <h3>
+            ◇ Jewelry
+        </h3>
+
+        <p>
+            Occasion matching
+        </p>
+
+    </a>
+
+</div>
+
+
+<section class="section">
+
+    <div class="section-head">
+
+        <h2>
+            Recent plans
+        </h2>
+
+        <a href="/history">
+            View all
+        </a>
+
+    </div>
+
+
+    <div class="list">
+
+        {% for item in items %}
+
+        <a
+            class="list-row"
+            href="/history"
+        >
+
+            <b>
+                {{ item.planner_type|title }}
+            </b>
+
+            <span>
+                {{ item.created_at }}
+            </span>
+
+        </a>
+
+        {% else %}
+
+        <p>
+            No recommendations yet.
+        </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
