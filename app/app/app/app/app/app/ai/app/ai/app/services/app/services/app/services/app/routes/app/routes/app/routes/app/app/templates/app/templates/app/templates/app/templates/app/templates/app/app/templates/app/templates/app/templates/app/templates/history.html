@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+History — PocketSmart AI
+{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        RECOMMENDATION HISTORY
+    </p>
+
+    <h1>
+        Your plans.
+    </h1>
+
+    <p>
+        Review previous AI-generated
+        recommendation sets.
+    </p>
+
+</section>
+
+
+<div class="list">
+
+    {% for item in items %}
+
+    <details class="history-card">
+
+        <summary>
+
+            <b>
+                {{ item.planner_type|title }} plan
+            </b>
+
+            <span>
+                {{ item.created_at }}
+            </span>
+
+        </summary>
+
+
+        <pre>
+{{ item.result_json }}
+        </pre>
+
+    </details>
+
+    {% else %}
+
+    <p>
+        No history yet.
+    </p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
