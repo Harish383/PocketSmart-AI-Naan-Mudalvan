@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}
+Jewelry Planner — PocketSmart AI
+{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        JEWELRY BUDGET PLANNER
+    </p>
+
+    <h1>
+        Find pieces that match the occasion.
+    </h1>
+
+    <p>
+        Describe your look and optionally
+        upload an outfit image.
+    </p>
+
+</section>
+
+
+<section class="planner-grid">
+
+    <form
+        id="jewelry-form"
+        class="panel form"
+        enctype="multipart/form-data"
+    >
+
+        <label>
+
+            Budget (₹)
+
+            <input
+                name="budget"
+                type="number"
+                min="1"
+                required
+                value="20000"
+            >
+
+        </label>
+
+
+        <label>
+
+            Occasion
+
+            <input
+                name="occasion"
+                required
+                value="Wedding"
+            >
+
+        </label>
+
+
+        <label>
+
+            Style
+
+            <select name="style">
+
+                <option>
+                    elegant
+                </option>
+
+                <option>
+                    minimal
+                </option>
+
+                <option>
+                    traditional
+                </option>
+
+                <option>
+                    statement
+                </option>
+
+                <option>
+                    contemporary
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+
+            Outfit description
+
+            <textarea
+                name="outfit_description"
+                placeholder="Colour, neckline, fabric, overall vibe..."
+            ></textarea>
+
+        </label>
+
+
+        <label>
+
+            Outfit image
+
+            <input
+                name="outfit_image"
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+            >
+
+        </label>
+
+
+        <button
+            class="button"
+            type="submit"
+        >
+            Generate jewelry plan
+        </button>
+
+
+        <p
+            id="form-error"
+            class="error"
+        ></p>
+
+    </form>
+
+
+    <div
+        id="results"
+        class="panel result"
+    >
+
+        <p class="muted">
+            Your recommendations
+            will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
