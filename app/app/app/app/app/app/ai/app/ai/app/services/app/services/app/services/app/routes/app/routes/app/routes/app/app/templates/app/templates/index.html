@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}
+PocketSmart AI
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div>
+
+        <p class="eyebrow">
+            GENAI BUDGET ASSISTANT
+        </p>
+
+        <h1>
+            Plan smarter.
+            <br>
+            <span>
+                Spend with confidence.
+            </span>
+        </h1>
+
+        <p class="lead">
+
+            Personalized,
+            budget-aware ideas for
+            home interiors, parties
+            and jewelry.
+
+        </p>
+
+        <div class="actions">
+
+            {% if user %}
+
+            <a
+                class="button"
+                href="/dashboard"
+            >
+                Open dashboard
+            </a>
+
+            {% else %}
+
+            <a
+                class="button"
+                href="/register"
+            >
+                Start planning
+            </a>
+
+            <a
+                class="button ghost"
+                href="/login"
+            >
+                I have an account
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="mini-label">
+            ONE BUDGET · MANY OPTIONS
+        </div>
+
+        <div class="budget">
+            ₹50,000
+        </div>
+
+        <div class="progress">
+
+            <i style="width:72%"></i>
+
+        </div>
+
+        <div class="split">
+
+            <span>
+                Essentials
+            </span>
+
+            <b>
+                72%
+            </b>
+
+        </div>
+
+        <div class="split">
+
+            <span>
+                Buffer
+            </span>
+
+            <b>
+                28%
+            </b>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-head">
+
+        <p class="eyebrow">
+            THREE SMART PLANNERS
+        </p>
+
+        <h2>
+            From idea to budget-friendly shortlist.
+        </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+        <a
+            class="card"
+            href="/planner/home"
+        >
+
+            <div class="icon">
+                ⌂
+            </div>
+
+            <h3>
+                Home Interior
+            </h3>
+
+            <p>
+                Rooms, quantities,
+                style and budget
+                into a practical
+                decor plan.
+            </p>
+
+        </a>
+
+
+        <a
+            class="card"
+            href="/planner/party"
+        >
+
+            <div class="icon">
+                ✦
+            </div>
+
+            <h3>
+                Party Planner
+            </h3>
+
+            <p>
+                Allocate food,
+                venue, decoration
+                and contingency.
+            </p>
+
+        </a>
+
+
+        <a
+            class="card"
+            href="/planner/jewelry"
+        >
+
+            <div class="icon">
+                ◇
+            </div>
+
+            <h3>
+                Jewelry Match
+            </h3>
+
+            <p>
+                Match jewelry
+                to occasion,
+                style and outfit.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
