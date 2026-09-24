@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Planner — PocketSmart AI
+{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+
+    <p class="eyebrow">
+        HOME INTERIOR PLANNER
+    </p>
+
+    <h1>
+        Build a beautiful home within budget.
+    </h1>
+
+    <p>
+        Add rooms and items.
+        AI will balance essentials,
+        style and cost.
+    </p>
+
+</section>
+
+
+<section class="planner-grid">
+
+    <form
+        id="home-form"
+        class="panel form"
+    >
+
+        <label>
+
+            Total budget (₹)
+
+            <input
+                name="budget"
+                type="number"
+                min="1"
+                required
+                value="50000"
+            >
+
+        </label>
+
+
+        <label>
+
+            Style
+
+            <select name="style">
+
+                <option>
+                    modern
+                </option>
+
+                <option>
+                    minimal
+                </option>
+
+                <option>
+                    traditional
+                </option>
+
+                <option>
+                    bohemian
+                </option>
+
+                <option>
+                    luxury
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+
+            Preferences
+
+            <textarea
+                name="preferences"
+                placeholder="Colours, must-have items, constraints..."
+            ></textarea>
+
+        </label>
+
+
+        <div id="rooms"></div>
+
+
+        <button
+            type="button"
+            class="button ghost"
+            onclick="addRoom()"
+        >
+            + Add room
+        </button>
+
+
+        <button
+            class="button"
+            type="submit"
+        >
+            Generate home plan
+        </button>
+
+
+        <p
+            id="form-error"
+            class="error"
+        ></p>
+
+    </form>
+
+
+    <div
+        id="results"
+        class="panel result"
+    >
+
+        <p class="muted">
+            Your recommendations
+            will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
